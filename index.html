@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>A4 Report</title>
+
+  <!-- Normalize or reset CSS with your favorite library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+
+  <!-- Load paper.css for happy printing -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.4.1/paper.css">
+
+  <!-- Set page size here: A5, A4 or A3 -->
+  <!-- Set also "landscape" if you need -->
+  <style>
+	@page { 
+	    size: A4
+	}
+        
+        /* Add Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Hanuman:wght@100..900');
+        @import url('https://fonts.googleapis.com/css2?family=Moul');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900');
+
+        .sheet  {
+            background-image: url('0.png');
+            background-position: center; /* 居中显示 */
+            background-size: contain;
+        }
+	/* 绝对定位div样式 */
+        .positioned-div {
+            position: absolute; /* 绝对定位 */
+            padding: 0; /* 去除内边距 */
+            border: 1px solid red; /* 红色边框 */
+            background-color: rgba(255, 255, 0, 0.5); /* 半透明黄色背景，方便观察 */
+            color: black;
+            user-select: none; /* 防止文本选择 */
+            box-sizing: border-box; /* 边框包含在尺寸内 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* 调整大小时的光标样式 */
+        .positioned-div:hover {
+            border-color: #007acc;
+        }
+
+        /* sheet 区域样式 */
+        .sheet {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 模式切换的视觉提示 */
+        .positioned-div {
+            transition: box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+        }
+
+        /* Shift键调整大小模式 */
+        body.resize-mode .positioned-div {
+            box-shadow: 0 0 0 2px #007acc;
+            border-color: #007acc !important;
+        }
+
+        /* Ctrl键拖拽模式 */
+        body.drag-mode .positioned-div {
+            box-shadow: 0 0 0 2px #28a745;
+            border-color: #28a745 !important;
+        }
+
+        /* Ctrl + 双击时的删除提示效果 */
+        body.drag-mode .positioned-div:hover {
+            box-shadow: 0 0 0 2px #dc3545;
+            border-color: #dc3545 !important;
+        }
+
+        /* 默认状态（无交互） */
+        .positioned-div {
+            opacity: 0.8;
+        }
+
+        body.resize-mode .positioned-div,
+        body.drag-mode .positioned-div {
+            opacity: 1;
+        }
+  </style>
+</head>
+
+<!-- Set "A5", "A4" or "A3" for class name -->
+<!-- Set also "landscape" if you need -->
+<body class="A4">
+
+  <!-- Each sheet element should have the class "sheet" -->
+  <!-- Removed padding for simpler positioning logic -->
+  <section class="sheet">
+
+  </section>
+
+  <!-- 加载JavaScript -->
+  <script src="index.js"></script>
+
+</body>
+
+</html>
