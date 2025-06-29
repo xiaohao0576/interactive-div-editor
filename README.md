@@ -57,7 +57,7 @@
 ## 项目结构
 
 ```
-papercss/
+interactive-div-editor/
 ├── index.html          # 主页面文件
 ├── index.js           # 核心JavaScript逻辑
 ├── 0.png             # 背景图片
@@ -69,8 +69,8 @@ papercss/
 ### 本地运行
 1. 克隆项目到本地
 ```bash
-git clone https://github.com/username/a4-web-editor.git
-cd a4-web-editor
+git clone git@github.com:xiaohao0576/interactive-div-editor.git
+cd interactive-div-editor
 ```
 
 2. 使用HTTP服务器运行（推荐）
